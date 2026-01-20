@@ -4,6 +4,3 @@
 </p>
 
 
-<p align="center">
-  <img src="preview/demo.gif" width="400" />
-</p>
