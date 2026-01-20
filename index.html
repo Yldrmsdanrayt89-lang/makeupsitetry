@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAKE-UPSITE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <span class="logo">TUMEVES</span>
+        </div>
+        <div class="navbar-center">
+    <div class="search-wrapper">
+        <input 
+            type="text" 
+            class="search-input" 
+            placeholder="Search for luxury makeup...">
+ 
+        <button class="search-clear" style="display: none;">
+            <i class="bi bi-x-circle-fill"></i>
+
+       </input> 
+        </button>
+        
+    </div>
+</div>
+        <div class="navbar-right">
+            <button class="filter-dropdown-btn" id="filterDropdownBtn">
+                <i class="bi bi-funnel"></i>
+                <span>Filters</span>
+            </button>
+            <div class="cart">
+                <i class="bi bi-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button class="cart-close" id="cartClose">&times;</button>
+        </div>
+        
+        <div class="cart-body" id="cartBody">
+            <div class="cart-empty" id="cartEmpty">
+                <i class="bi bi-cart-x"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <main class="page">
+       
+
+         <!-- Filter Dropdown Panel -->
+<div class="filter-dropdown" id="filterDropdown">
+    <div class="filter-dropdown-content">
+        <!-- Category Filter -->
+        <div class="filter-group">
+            <h3 class="filter-title">Category</h3>
+            <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-filter="category" value="lipstick">
+                <span>Lipstick</span>
+            </label>
+            <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-filter="category" value="eyeshadow">
+                <span>Eyeshadow</span>
+            </label>
+            <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-filter="category" value="set">
+                <span>Makeup Set</span>
+            </label>
+            <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-filter="category" value="foundation">
+                <span>Foundation</span>
+            </label>
+            <label class="filter-option">
+                <input type="checkbox" class="filter-checkbox" data-filter="category" value="mascara">
+                <span>Mascara</span>
+            </label>
+        </div>
+        
+  
+
+
+
+                <!-- Brand Filter -->
+                <div class="filter-group">
+                    <h3 class="filter-title">Brand</h3>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="brand" value="dior">
+                        <span>Dior</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="brand" value="chanel">
+                        <span>Chanel</span>
+                    </label>
+                </div>
+                
+                <!-- Price Filter -->
+                <div class="filter-group">
+                    <h3 class="filter-title">Price Range</h3>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="price" value="0-25">
+                        <span>Under $25</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="price" value="25-50">
+                        <span>$25 - $50</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="price" value="50-100">
+                        <span>$50 - $100</span>
+                    </label>
+                </div>
+                
+                <button class="clear-filters">Clear All Filters</button>
+            </div>
+        </div>
+        
+        <!-- Content Wrapper -->
+        <div class="content-wrapper">
+            <!-- Hero Banner -->
+            <section class="hero-banner">
+                <img src="channel1.jpg" alt="New Arrivals">
+                <div class="hero-overlay">
+                    <h1 class="hero-title">New Arrivals</h1>
+                    <p class="hero-subtitle">Discover our latest collection of luxury makeup. Timeless elegance meets modern beauty.</p>
+                    <button class="hero-btn">Shop Now</button>
+                </div>
+            </section>
+
+            <!-- Featured Spotlight -->
+            <section class="featured-spotlight">
+                <div class="spotlight-badge">✨ Featured This Week</div>
+                <div class="spotlight-grid">
+                    <div class="spotlight-card">
+                        <img src="diorlps.jpg" alt="Featured">
+                        <div class="spotlight-info">
+                            <h3>Best Seller</h3>
+                            <p>Dior Rouge Lipstick</p>
+                            <span class="spotlight-price">$39.99</span>
+                            <button class="view-btn">View Details</button>
+                        </div>
+                    </div>
+                    <div class="spotlight-card">
+                        <img src="channel1.jpg" alt="Featured">
+                        <div class="spotlight-info">
+                            <h3>New Arrival</h3>
+                            <p>Chanel Luxury Set</p>
+                            <span class="spotlight-price">$99.99</span>
+                            <button class="view-btn">View Details</button>
+                        </div>
+                    </div>
+                    <div class="spotlight-card">
+                        <img src="diorlps5.jpg" alt="Featured">
+                        <div class="spotlight-info">
+                            <h3>Hot Deal</h3>
+                            <p>Limited Edition Rouge</p>
+                            <span class="spotlight-price">$39.99</span>
+                            <button class="view-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+           <!-- Animated Statistics Section -->
+            <section class="statistics-section">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+                    <div class="stat-number" data-target="15000">0</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="bi bi-box-seam"></i>
+                    </div>
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">Premium Products</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <div class="stat-number" data-target="98">0</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="bi bi-award-fill"></i>
+                    </div>
+                    <div class="stat-number" data-target="25">0</div>
+                    <div class="stat-label">Luxury Brands</div>
+                </div>
+            </section>
+
+            <!-- Product Categories Grid -->
+            <section class="categories-section">
+                <div class="categories-header">
+                    <h2 class="categories-title">Shop by Category</h2>
+                    <p class="categories-subtitle">Discover our curated collections</p>
+                </div>
+                
+                <div class="categories-grid">
+                    <div class="category-card category-lips">
+                        <img src="diorlps.jpg" alt="Lips" class="category-image">
+                        <div class="category-overlay">
+                            <i class="bi bi-suit-heart-fill category-icon"></i>
+                            <h3 class="category-name">Lips</h3>
+                            <p class="category-count">120+ Products</p>
+                            <button class="category-btn">Shop Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card category-eyes">
+                        <img src="channel 3.jpg" alt="Eyes" class="category-image">
+                        <div class="category-overlay">
+                            <i class="bi bi-eye-fill category-icon"></i>
+                            <h3 class="category-name">Eyes</h3>
+                            <p class="category-count">85+ Products</p>
+                            <button class="category-btn">Shop Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card category-face">
+                        <img src="channel1.jpg" alt="Face" class="category-image">
+                        <div class="category-overlay">
+                            <i class="bi bi-emoji-smile-fill category-icon"></i>
+                            <h3 class="category-name">Face</h3>
+                            <p class="category-count">95+ Products</p>
+                            <button class="category-btn">Shop Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card category-sets">
+                        <img src="diornewset1.jpg" alt="Sets" class="category-image">
+                        <div class="category-overlay">
+                            <i class="bi bi-gift-fill category-icon"></i>
+                            <h3 class="category-name">Gift Sets</h3>
+                            <p class="category-count">40+ Products</p>
+                            <button class="category-btn">Shop Now</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- Vintage Brand Story Section -->
+            <section class="vintage-story">
+                <div class="vintage-story-content">
+                    <div class="vintage-story-left">
+                        <div class="vintage-frame">
+                            <img src="diorlps.jpg" alt="Vintage Beauty" class="vintage-image">
+                            <div class="vintage-corner vintage-corner-tl"></div>
+                            <div class="vintage-corner vintage-corner-tr"></div>
+                            <div class="vintage-corner vintage-corner-bl"></div>
+                            <div class="vintage-corner vintage-corner-br"></div>
+                        </div>
+                    </div>
+                    <div class="vintage-story-right">
+                        <div class="vintage-label">Since 1947</div>
+                        <h2 class="vintage-story-title">Timeless Elegance</h2>
+                        <div class="vintage-divider">
+                            <span class="vintage-ornament">❦</span>
+                        </div>
+                        <p class="vintage-story-text">
+                            Discover the art of classic beauty with our curated collection of vintage-inspired makeup. 
+                            Each product is a tribute to the golden age of Hollywood glamour, where sophistication 
+                            met timeless style.
+                        </p>
+                        <p class="vintage-story-text">
+                            From rich rouge reds to delicate peachy nudes, our carefully selected shades bring 
+                            the elegance of yesteryear to your modern beauty routine.
+                        </p>
+                        <button class="vintage-btn">Explore Our Heritage</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vintage Product Showcase -->
+            <section class="vintage-showcase">
+                <div class="vintage-showcase-header">
+                    <div class="vintage-ornament-line">
+                        <span>✦</span>
+                        <span>✦</span>
+                        <span>✦</span>
+                    </div>
+                    <h2 class="vintage-showcase-title">Classic Beauty Essentials</h2>
+                    <p class="vintage-showcase-subtitle">The Icons of Timeless Glamour</p>
+                    <div class="vintage-ornament-line">
+                        <span>✦</span>
+                        <span>✦</span>
+                        <span>✦</span>
+                    </div>
+                </div>
+
+                <div class="vintage-showcase-grid">
+                    <div class="vintage-product-card">
+                        <div class="vintage-badge-ribbon">
+                            <span>Classic</span>
+                        </div>
+                        <div class="vintage-product-image">
+                            <img src="diorlps2.jpg" alt="Vintage Lipstick">
+                        </div>
+                        <div class="vintage-product-info">
+                            <h3 class="vintage-product-name">Rouge Classique</h3>
+                            <p class="vintage-product-desc">The iconic red that defined an era</p>
+                            <div class="vintage-product-price">$42.00</div>
+                            <button class="vintage-product-btn">Add to Collection</button>
+                        </div>
+                    </div>
+
+                    <div class="vintage-product-card">
+                        <div class="vintage-badge-ribbon">
+                            <span>Heritage</span>
+                        </div>
+                        <div class="vintage-product-image">
+                            <img src="channel 3.jpg" alt="Vintage Eyeshadow">
+                        </div>
+                        <div class="vintage-product-info">
+                            <h3 class="vintage-product-name">Ombre Élégante</h3>
+                            <p class="vintage-product-desc">Timeless shades for every occasion</p>
+                            <div class="vintage-product-price">$58.00</div>
+                            <button class="vintage-product-btn">Add to Collection</button>
+                        </div>
+                    </div>
+
+                    <div class="vintage-product-card">
+                        <div class="vintage-badge-ribbon">
+                            <span>Signature</span>
+                        </div>
+                        <div class="vintage-product-image">
+                            <img src="diorlps3.jpg" alt="Vintage Lipstick">
+                        </div>
+                        <div class="vintage-product-info">
+                            <h3 class="vintage-product-name">Velvet Vintage</h3>
+                            <p class="vintage-product-desc">Smooth as silk, bold as beauty</p>
+                            <div class="vintage-product-price">$45.00</div>
+                            <button class="vintage-product-btn">Add to Collection</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vintage Testimonial -->
+            <section class="vintage-testimonial">
+               
+                <blockquote class="vintage-quote">
+                    "Elegance is the only beauty that never fades. These timeless pieces have transformed 
+                    my entire beauty collection into something truly special."
+                </blockquote>
+                
+                </div>
+            </section>
+
+            <!-- Vintage Texture Banner -->
+            <section class="vintage-texture-banner">
+                <div class="vintage-texture-overlay">
+                    <h2 class="vintage-banner-title">Embrace the Golden Age</h2>
+                    <p class="vintage-banner-text">Where luxury meets legacy</p>
+                    <div class="vintage-banner-ornament">✦ ❖ ✦</div>
+                </div>
+            </section>
+
+
+            
+            <!-- DIOR PRODUCTS -->
+            <section class="products">
+                <div class="products-header">
+                    <h2 class="products-title">Vintage Beauty Picks</h2>
+                    <p class="products-subtitle">Cream tones, classic glam, timeless makeup.</p>
+                </div>
+                
+                <button class="scroll-arrow left" data-section="dior">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="scroll-arrow right" data-section="dior">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+                
+                <div class="product-grid" data-grid="dior">
+                    <article class="product-card" data-category="lipstick" data-brand="dior" data-price="39.99">
+                        <div class="product-media">
+                            <img class="product-img" src="diorlps.jpg" alt="Dior Lipstick">
+                            <button class="badge">New</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Dior</p>
+                            <h3 class="product-name">Dior Lipstick</h3>
+                            <div class="product-row">
+                                <span class="product-price">$39.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="lipstick" data-brand="dior" data-price="39.99">
+                        <div class="product-media">
+                            <img class="product-img" src="diorlps2.jpg" alt="Dior Lipstick">
+                            <button class="badge">New</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Dior</p>
+                            <h3 class="product-name">Dior Lipstick</h3>
+                            <div class="product-row">
+                                <span class="product-price">$39.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="lipstick" data-brand="dior" data-price="39.99">
+                        <div class="product-media">
+                            <img class="product-img" src="diorlps3.jpg" alt="Dior Lipstick">
+                            <button class="badge">New</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Dior</p>
+                            <h3 class="product-name">Dior Lipstick</h3>
+                            <div class="product-row">
+                                <span class="product-price">$39.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="lipstick" data-brand="dior" data-price="39.99">
+                        <div class="product-media">
+                            <img class="product-img" src="diorlps4.jpg" alt="Dior Lipstick">
+                            <button class="badge">New</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Dior</p>
+                            <h3 class="product-name">Dior Lipstick</h3>
+                            <div class="product-row">
+                                <span class="product-price">$39.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="set" data-brand="dior" data-price="39.99">
+                        <div class="product-media">
+                            <img class="product-img" src="diornewset1.jpg" alt="Dior Set">
+                            <button class="badge">New</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Dior</p>
+                            <h3 class="product-name">Dior Makeup Set</h3>
+                            <div class="product-row">
+                                <span class="product-price">$39.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="lipstick" data-brand="dior" data-price="39.99">
+                        <div class="product-media">
+                            <img class="product-img" src="diorlps5.jpg" alt="Dior Lipstick">
+                            <button class="badge">New</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Dior</p>
+                            <h3 class="product-name">Dior Lipstick</h3>
+                            <div class="product-row">
+                                <span class="product-price">$39.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+                </div>
+            </section>
+
+            <!-- Premium Collection Section -->
+            <section class="premium-collection">
+                <div class="premium-left">
+                    <div class="premium-image-wrapper">
+                        <img src="diorlps.jpg" alt="Premium Collection" class="premium-main-image">
+                        <div class="premium-overlay">
+                            <h2 class="premium-title">Premium Collection</h2>
+                            <p class="premium-description">Discover our exclusive luxury makeup line</p>
+                            <button class="premium-explore-btn">Explore Collection</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="premium-right">
+                    <div class="premium-arrows">
+                        <button class="premium-arrow left" id="premiumLeft">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <button class="premium-arrow right" id="premiumRight">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="premium-carousel-wrapper">
+                        <div class="premium-carousel" id="premiumCarousel">
+                            <article class="premium-card">
+                                <div class="premium-card-image">
+                                    <img src="diorlps2.jpg" alt="Product">
+                                    <span class="premium-badge">New</span>
+                                </div>
+                                <div class="premium-card-body">
+                                    <p class="premium-card-brand">Dior</p>
+                                    <h4 class="premium-card-name">Rouge Dior Lipstick</h4>
+                                    <div class="premium-card-footer">
+                                        <span class="premium-card-price">$45.99</span>
+                                        <button class="premium-add-btn">
+                                            <i class="bi bi-bag"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="premium-card">
+                                <div class="premium-card-image">
+                                    <img src="channel 3.jpg" alt="Product">
+                                    <span class="premium-badge">Hot</span>
+                                </div>
+                                <div class="premium-card-body">
+                                    <p class="premium-card-brand">Chanel</p>
+                                    <h4 class="premium-card-name">Eyeshadow Palette</h4>
+                                    <div class="premium-card-footer">
+                                        <span class="premium-card-price">$65.99</span>
+                                        <button class="premium-add-btn">
+                                            <i class="bi bi-bag"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="premium-card">
+                                <div class="premium-card-image">
+                                    <img src="diorlps3.jpg" alt="Product">
+                                    <span class="premium-badge">Luxury</span>
+                                </div>
+                                <div class="premium-card-body">
+                                    <p class="premium-card-brand">Dior</p>
+                                    <h4 class="premium-card-name">Velvet Lipstick</h4>
+                                    <div class="premium-card-footer">
+                                        <span class="premium-card-price">$42.99</span>
+                                        <button class="premium-add-btn">
+                                            <i class="bi bi-bag"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="premium-card">
+                                <div class="premium-card-image">
+                                    <img src="channel 4.jpg" alt="Product">
+                                    <span class="premium-badge">Exclusive</span>
+                                </div>
+                                <div class="premium-card-body">
+                                    <p class="premium-card-brand">Chanel</p>
+                                    <h4 class="premium-card-name">Rouge Coco</h4>
+                                    <div class="premium-card-footer">
+                                        <span class="premium-card-price">$48.99</span>
+                                        <button class="premium-add-btn">
+                                            <i class="bi bi-bag"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="premium-card">
+                                <div class="premium-card-image">
+                                    <img src="diorlps4.jpg" alt="Product">
+                                    <span class="premium-badge">Limited</span>
+                                </div>
+                                <div class="premium-card-body">
+                                    <p class="premium-card-brand">Dior</p>
+                                    <h4 class="premium-card-name">Addict Lipstick</h4>
+                                    <div class="premium-card-footer">
+                                        <span class="premium-card-price">$44.99</span>
+                                        <button class="premium-add-btn">
+                                            <i class="bi bi-bag"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="premium-card">
+                                <div class="premium-card-image">
+                                    <img src="channel 5.jpg" alt="Product">
+                                    <span class="premium-badge">New</span>
+                                </div>
+                                <div class="premium-card-body">
+                                    <p class="premium-card-brand">Chanel</p>
+                                    <h4 class="premium-card-name">Rouge Allure</h4>
+                                    <div class="premium-card-footer">
+                                        <span class="premium-card-price">$52.99</span>
+                                        <button class="premium-add-btn">
+                                            <i class="bi bi-bag"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    
+                    <div class="premium-indicators" id="premiumIndicators">
+                        <span class="premium-dot active"></span>
+                        <span class="premium-dot"></span>
+                        <span class="premium-dot"></span>
+                        <span class="premium-dot"></span>
+                        <span class="premium-dot"></span>
+                        <span class="premium-dot"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CHANEL PRODUCTS -->
+            <section class="products">
+                <div class="products-header">
+                    <h2 class="products-title">NEW ARRIVALS</h2>
+                    <p class="products-subtitle">Brave, fresh finds, timeless makeup.</p>
+                </div>
+                
+                <button class="scroll-arrow left" data-section="chanel">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="scroll-arrow right" data-section="chanel">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+                
+                <div class="product-grid" data-grid="chanel">
+                    <article class="product-card" data-category="set" data-brand="chanel" data-price="99.99">
+                        <div class="product-media">
+                            <img class="product-img" src="channel1.jpg" alt="Chanel Set">
+                            <button class="badge">Top Sale</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Chanel</p>
+                            <h3 class="product-name">Chanel Set</h3>
+                            <div class="product-row">
+                                <span class="product-price">$99.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="eyeshadow" data-brand="chanel" data-price="29.99">
+                        <div class="product-media">
+                            <img class="product-img" src="channel 3.jpg" alt="Chanel Eyeshadow">
+                            <button class="badge">New</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Chanel</p>
+                            <h3 class="product-name">Chanel Eyeshadow</h3>
+                            <div class="product-row">
+                                <span class="product-price">$29.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="lipstick" data-brand="chanel" data-price="19.99">
+                        <div class="product-media">
+                            <img class="product-img" src="channel 4.jpg" alt="Chanel Lipstick">
+                            <button class="badge">New</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Chanel</p>
+                            <h3 class="product-name">Chanel Lipstick</h3>
+                            <div class="product-row">
+                                <span class="product-price">$19.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="lipstick" data-brand="chanel" data-price="19.99">
+                        <div class="product-media">
+                            <img class="product-img" src="channel 5.jpg" alt="Chanel Lipstick">
+                            <button class="badge">New</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Chanel</p>
+                            <h3 class="product-name">Chanel Lipstick</h3>
+                            <div class="product-row">
+                                <span class="product-price">$19.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="eyeshadow" data-brand="chanel" data-price="29.99">
+                        <div class="product-media">
+                            <img class="product-img" src="channel 6.jpg" alt="Chanel Eyeshadow">
+                            <button class="badge">New</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Chanel</p>
+                            <h3 class="product-name">Chanel Eyeshadow</h3>
+                            <div class="product-row">
+                                <span class="product-price">$29.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="eyeshadow" data-brand="chanel" data-price="39.99">
+                        <div class="product-media">
+                            <img class="product-img" src="channel 7.jpg" alt="Chanel Eyeshadow">
+                            <button class="badge">New</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Chanel</p>
+                            <h3 class="product-name">Chanel Eyeshadow</h3>
+                            <div class="product-row">
+                                <span class="product-price">$39.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+                </div>
+            </section>
+
+
+         <!-- GIVENCHY PRODUCTS -->
+            <section class="products">
+                <div class="products-header">
+                    <h2 class="products-title">Givenchy Collection</h2>
+                    <p class="products-subtitle">Parisian elegance, bold sophistication.</p>
+                </div>
+                
+                <button class="scroll-arrow left" data-section="givenchy">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="scroll-arrow right" data-section="givenchy">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+                
+                <div class="product-grid" data-grid="givenchy">
+                    <article class="product-card" data-category="lipstick" data-brand="givenchy" data-price="44.99">
+                        <div class="product-media">
+                            <img class="product-img" src="givenchyrouge.jpg" alt="Givenchy Lipstick">
+                            <button class="badge">Luxury</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Givenchy</p>
+                            <h3 class="product-name">Le Rouge Lipstick</h3>
+                            <div class="product-row">
+                                <span class="product-price">$44.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="lipstick" data-brand="givenchy" data-price="42.99">
+                        <div class="product-media">
+                            <img class="product-img" src="givenchyrouge2.jpg" alt="Givenchy Lipstick">
+                            <button class="badge">New</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Givenchy</p>
+                            <h3 class="product-name">Rouge Interdit</h3>
+                            <div class="product-row">
+                                <span class="product-price">$42.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="eyeshadow" data-brand="givenchy" data-price="68.99">
+                        <div class="product-media">
+                            <img class="product-img" src="givenchyposter.jpg" alt="Givenchy Eyeshadow">
+                            <button class="badge">Premium</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Givenchy</p>
+                            <h3 class="product-name">Prisme Quatuor</h3>
+                            <div class="product-row">
+                                <span class="product-price">$68.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="lipstick" data-brand="givenchy" data-price="46.99">
+                        <div class="product-media">
+                            <img class="product-img" src="givenchyrouge3.jpg" alt="Givenchy Lipstick">
+                            <button class="badge">Hot</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Givenchy</p>
+                            <h3 class="product-name">Le Rouge Deep Velvet</h3>
+                            <div class="product-row">
+                                <span class="product-price">$46.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="set" data-brand="givenchy" data-price="145.99">
+                        <div class="product-media">
+                            <img class="product-img" src="givenchyrouge4.jpg" alt="Givenchy Set">
+                            <button class="badge">Exclusive</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Givenchy</p>
+                            <h3 class="product-name">Luxury Makeup Set</h3>
+                            <div class="product-row">
+                                <span class="product-price">$145.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="set" data-brand="givenchy" data-price="43.99">
+                        <div class="product-media">
+                            <img class="product-img" src="s-l1200-2.jpg" alt="Givenchy Lipstick">
+                            <button class="badge">Bestseller</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Givenchy</p>
+                            <h3 class="product-name">Rouge Givenchy</h3>
+                            <div class="product-row">
+                                <span class="product-price">$43.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+                </div>
+            </section>
+
+            <!-- ARMANI PRODUCTS -->
+            <section class="products">
+                <div class="products-header">
+                    <h2 class="products-title">Giorgio Armani Beauty</h2>
+                    <p class="products-subtitle">Italian luxury, flawless elegance.</p>
+                </div>
+                
+                <button class="scroll-arrow left" data-section="armani">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="scroll-arrow right" data-section="armani">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+                
+                <div class="product-grid" data-grid="armani">
+                    <article class="product-card" data-category="lipstick" data-brand="armani" data-price="48.99">
+                        <div class="product-media">
+                            <img class="product-img" src="armanirouge.jpg" alt="Armani Lipstick">
+                            <button class="badge">Iconic</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Giorgio Armani</p>
+                            <h3 class="product-name">Rouge d'Armani</h3>
+                            <div class="product-row">
+                                <span class="product-price">$48.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="eyeshadow" data-brand="armani" data-price="52.99">
+                        <div class="product-media">
+                            <img class="product-img" src="armanipalette.jpg" alt="Armani Lipstick">
+                            <button class="badge">Luxury</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Giorgio Armani</p>
+                            <h3 class="product-name">Everyday Palette</h3>
+                            <div class="product-row">
+                                <span class="product-price">$52.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="eyeshadow" data-brand="armani" data-price="72.99">
+                        <div class="product-media">
+                            <img class="product-img" src="armanieyewear.jpg" alt="Armani Eyeshadow">
+                            <button class="badge">Premium</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Giorgio Armani</p>
+                            <h3 class="product-name">Eyes To Kill Palette</h3>
+                            <div class="product-row">
+                                <span class="product-price">$72.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="eyeshadow" data-brand="armani" data-price="46.99">
+                        <div class="product-media">
+                            <img class="product-img" src="armanifar.jpg" alt="Armani Lipstick">
+                            <button class="badge">New</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Giorgio Armani</p>
+                            <h3 class="product-name">Gaze Power</h3>
+                            <div class="product-row">
+                                <span class="product-price">$46.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="set" data-brand="armani" data-price="165.99">
+                        <div class="product-media">
+                            <img class="product-img" src="armanimakeupset.jpg" alt="Armani Set">
+                            <button class="badge">Exclusive</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Giorgio Armani</p>
+                            <h3 class="product-name">Beauty Essentials Set</h3>
+                            <div class="product-row">
+                                <span class="product-price">$165.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="set" data-brand="armani" data-price="50.99">
+                        <div class="product-media">
+                            <img class="product-img" src="4a5da73b704b9616286df4449a2a28f9.jpg" alt="Armani Lipstick">
+                            <button class="badge">Hot</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Giorgio Armani</p>
+                            <h3 class="product-name">Ecstasy Shine</h3>
+                            <div class="product-row">
+                                <span class="product-price">$50.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+                </div>
+            </section>
+
+            <!-- YSL PRODUCTS -->
+            <section class="products">
+                <div class="products-header">
+                    <h2 class="products-title">Yves Saint Laurent</h2>
+                    <p class="products-subtitle">Bold, iconic, effortlessly chic.</p>
+                </div>
+                
+                <button class="scroll-arrow left" data-section="ysl">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="scroll-arrow right" data-section="ysl">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+                
+                <div class="product-grid" data-grid="ysl">
+                    <article class="product-card" data-category="eyeshadow" data-brand="ysl" data-price="45.99">
+                        <div class="product-media">
+                            <img class="product-img" src="acce9602c2cc0597734789734ef641b8.jpg" alt="YSL Lipstick">
+                            <button class="badge">Iconic</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">YSL</p>
+                            <h3 class="product-name">Everyday Palette</h3>
+                            <div class="product-row">
+                                <span class="product-price">$45.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="lipstick" data-brand="ysl" data-price="49.99">
+                        <div class="product-media">
+                            <img class="product-img" src="yslrouge2.jpg" alt="YSL Lipstick">
+                            <button class="badge">Bestseller</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">YSL</p>
+                            <h3 class="product-name">Tatouage Couture</h3>
+                            <div class="product-row">
+                                <span class="product-price">$49.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="eyeshadow" data-brand="ysl" data-price="65.99">
+                        <div class="product-media">
+                            <img class="product-img" src="yslmakeupset.jpg" alt="YSL Eyeshadow">
+                            <button class="badge">New</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">YSL</p>
+                            <h3 class="product-name">Couture Palette</h3>
+                            <div class="product-row">
+                                <span class="product-price">$65.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="lipstick" data-brand="ysl" data-price="47.99">
+                        <div class="product-media">
+                            <img class="product-img" src="yslset2.jpg" alt="YSL Lipstick">
+                            <button class="badge">Limited</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">YSL</p>
+                            <h3 class="product-name">Volupté Shine</h3>
+                            <div class="product-row">
+                                <span class="product-price">$47.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="set" data-brand="ysl" data-price="159.99">
+                        <div class="product-media">
+                            <img class="product-img" src="yslposter.jpg" alt="YSL Set">
+                            <button class="badge">Premium</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">YSL</p>
+                            <h3 class="product-name">Couture Collection Set</h3>
+                            <div class="product-row">
+                                <span class="product-price">$159.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="lipstick" data-brand="ysl" data-price="44.99">
+                        <div class="product-media">
+                            <img class="product-img" src="yslposter2.jpg" alt="YSL Lipstick">
+                            <button class="badge">Popular</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">YSL</p>
+                            <h3 class="product-name">Rouge Volupté</h3>
+                            <div class="product-row">
+                                <span class="product-price">$44.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+                </div>
+            </section>
+
+            <!-- LANCOME PRODUCTS -->
+            <section class="products">
+                <div class="products-header">
+                    <h2 class="products-title">Lancôme Paris</h2>
+                    <p class="products-subtitle">French sophistication, timeless beauty.</p>
+                </div>
+                
+                <button class="scroll-arrow left" data-section="lancome">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="scroll-arrow right" data-section="lancome">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+                
+                <div class="product-grid" data-grid="lancome">
+                    <article class="product-card" data-category="lipstick" data-brand="lancome" data-price="38.99">
+                        <div class="product-media">
+                            <img class="product-img" src="lancomeruj.jpg" alt="Lancome Lipstick">
+                            <button class="badge">Classic</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Lancôme</p>
+                            <h3 class="product-name">L'Absolu Rouge</h3>
+                            <div class="product-row">
+                                <span class="product-price">$38.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="set" data-brand="lancome" data-price="42.99">
+                        <div class="product-media">
+                            <img class="product-img" src="lancomeset.jpg" alt="Lancome Lipstick">
+                            <button class="badge">New</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Lancôme</p>
+                            <h3 class="product-name">L'Absolu Matte</h3>
+                            <div class="product-row">
+                                <span class="product-price">$42.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="set" data-brand="lancome" data-price="58.99">
+                        <div class="product-media">
+                            <img class="product-img" src="lancomeset3.jpg" alt="Lancome Eyeshadow">
+                            <button class="badge">Bestseller</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Lancôme</p>
+                            <h3 class="product-name">Hypnôse Palette</h3>
+                            <div class="product-row">
+                                <span class="product-price">$58.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="eyeshadow" data-brand="lancome" data-price="40.99">
+                        <div class="product-media">
+                            <img class="product-img" src="lancomepowder.jpg" alt="Lancome Lipstick">
+                            <button class="badge">Popular</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Lancôme</p>
+                            <h3 class="product-name">Cheeks In Love</h3>
+                            <div class="product-row">
+                                <span class="product-price">$40.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="set" data-brand="lancome" data-price="135.99">
+                        <div class="product-media">
+                            <img class="product-img" src="lancomeset4.jpg" alt="Lancome Set">
+                            <button class="badge">Exclusive</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Lancôme</p>
+                            <h3 class="product-name">Beauty Gift Set</h3>
+                            <div class="product-row">
+                                <span class="product-price">$135.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="" data-brand="lancome" data-price="39.99">
+                        <div class="product-media">
+                            <img class="product-img" src="lancomeye1.jpg" alt="Lancome Lipstick">
+                            <button class="badge">Hot</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Lancôme</p>
+                            <h3 class="product-name">Lime Time</h3>
+                            <div class="product-row">
+                                <span class="product-price">$39.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+                </div>
+            </section>
+
+         <!-- SIGNATURE REDS COLLECTION -->
+            <section class="products">
+                <div class="products-header">
+                    <h2 class="products-title">Foundations</h2>
+                    <p class="products-subtitle">The perfect skin</p>
+                </div>
+                
+                <button class="scroll-arrow left" data-section="signature-reds">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="scroll-arrow right" data-section="signature-reds">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+                
+                <div class="product-grid" data-grid="signature-reds">
+                    <article class="product-card" data-category="lipstick" data-brand="chanel" data-price="43.99">
+                        <div class="product-media">
+                            <img class="product-img" src="chanelfoundation2.jpg" alt="Chanel Red Lipstick">
+                            <button class="badge">Classic</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Chanel</p>
+                            <h3 class="product-name">Rouge Allure Velvet</h3>
+                            <div class="product-row">
+                                <span class="product-price">$49.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="lipstick" data-brand="dior" data-price="44.99">
+                        <div class="product-media">
+                            <img class="product-img" src="diorfoundation.jpg" alt="Dior Red Lipstick">
+                            <button class="badge">Iconic</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Dior</p>
+                            <h3 class="product-name">Dior Foundation 999</h3>
+                            <div class="product-row">
+                                <span class="product-price">$49.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="foundation" data-brand="givenchy" data-price="45.99">
+                        <div class="product-media">
+                            <img class="product-img" src="givenchyfoundation.jpg" alt="Givenchy Red Lipstick">
+                            <button class="badge">Bold</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Givenchy</p>
+                            <h3 class="product-name">Radiant Canvas</h3>
+                            <div class="product-row">
+                                <span class="product-price">$49.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="foundation" data-brand="armani" data-price="49.99">
+                        <div class="product-media">
+                            <img class="product-img" src="armanifoundation.jpg" alt="Armani Red Lipstick">
+                            <button class="badge">Luxury</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Giorgio Armani</p>
+                            <h3 class="product-name">Second Skin Luxe</h3>
+                            <div class="product-row">
+                                <span class="product-price">$49.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="foundation" data-brand="ysl" data-price="46.99">
+                        <div class="product-media">
+                            <img class="product-img" src="yslfoundation.jpg" alt="YSL Red Lipstick">
+                            <button class="badge">Bestseller</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">YSL</p>
+                            <h3 class="product-name">Perfection 01</h3>
+                            <div class="product-row">
+                                <span class="product-price">$49.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="foundation" data-brand="lancome" data-price="41.99">
+                        <div class="product-media">
+                            <img class="product-img" src="lancomefoundation.jpg" alt="Lancome Red Lipstick">
+                            <button class="badge">Timeless</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Lancôme</p>
+                            <h3 class="product-name">Opaline Skin</h3>
+                            <div class="product-row">
+                                <span class="product-price">$49.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+                </div>
+            </section>
+
+            <!-- NUDE ESSENTIALS COLLECTION -->
+            <section class="products">
+                <div class="products-header">
+                    <h2 class="products-title">Mascaras</h2>
+                    <p class="products-subtitle">The best eyelashes.</p>
+                </div>
+                
+                <button class="scroll-arrow left" data-section="nude-essentials">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="scroll-arrow right" data-section="nude-essentials">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+                
+                <div class="product-grid" data-grid="nude-essentials">
+                    <article class="product-card" data-category="lipstick" data-brand="chanel" data-price="42.99">
+                        <div class="product-media">
+                            <img class="product-img" src="chanelmascara.jpg" alt="Chanel Nude Lipstick">
+                            <button class="badge">Natural</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Chanel</p>
+                            <h3 class="product-name">Black Opera</h3>
+                            <div class="product-row">
+                                <span class="product-price">$39.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="mascara" data-brand="dior" data-price="43.99">
+                        <div class="product-media">
+                            <img class="product-img" src="diormascara.jpg" alt="Dior Nude Lipstick">
+                            <button class="badge">Elegant</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Dior</p>
+                            <h3 class="product-name">Dior Lash</h3>
+                            <div class="product-row">
+                                <span class="product-price">$39.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="mascara" data-brand="givenchy" data-price="44.99">
+                        <div class="product-media">
+                            <img class="product-img" src="givenchymascara.jpg" alt="Givenchy Nude Lipstick">
+                            <button class="badge">Chic</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Givenchy</p>
+                            <h3 class="product-name">Noire Supreme</h3>
+                            <div class="product-row">
+                                <span class="product-price">$39.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="mascara" data-brand="armani" data-price="48.99">
+                        <div class="product-media">
+                            <img class="product-img" src="armanimascara.jpg" alt="Armani Nude Lipstick">
+                            <button class="badge">Sophisticated</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Giorgio Armani</p>
+                            <h3 class="product-name">Velvet Lash</h3>
+                            <div class="product-row">
+                                <span class="product-price">$39.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="mascara" data-brand="ysl" data-price="45.99">
+                        <div class="product-media">
+                            <img class="product-img" src="yslmascara.jpg" alt="YSL Nude Lipstick">
+                            <button class="badge">Modern</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">YSL</p>
+                            <h3 class="product-name">Silk Dimension</h3>
+                            <div class="product-row">
+                                <span class="product-price">$39.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+
+                    <article class="product-card" data-category="mascara" data-brand="lancome" data-price="40.99">
+                        <div class="product-media">
+                            <img class="product-img" src="lancomemascara.jpg" alt="Lancome Nude Lipstick">
+                            <button class="badge">Essential</button>
+                        </div>
+                        <div class="product-body">
+                            <p class="product-brand">Lancôme</p>
+                            <h3 class="product-name">Lash Atelier</h3>
+                            <div class="product-row">
+                                <span class="product-price">$39.99</span>
+                                <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <button class="product-cta"><i class="bi bi-bag"></i></button>
+                        </div> 
+                    </article>
+                </div>
+            </section>
+          
+            
+
+            <!-- Newsletter Section -->
+            <section class="newsletter-section">
+                <div class="newsletter-content">
+                    <h2 class="newsletter-title">Join Our Beauty Club</h2>
+                    <p class="newsletter-text">Get exclusive offers, beauty tips, and early access to new collections</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" class="newsletter-input" id="newsletterEmail">
+                        <button class="newsletter-btn" id="newsletterSubmit">Subscribe</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Action Buttons -->
+    <footer class="footer-actions">
+        <div class="footer-actions-container">
+            <button class="footer-btn footer-whatsapp" title="Chat on WhatsApp">
+                <i class="bi bi-whatsapp"></i>
+                <span>WhatsApp</span>
+            </button>
+            <button class="footer-btn footer-chat" title="Live Chat">
+                <i class="bi bi-chat-dots"></i>
+                <span>Live Chat</span>
+            </button>
+            <button class="footer-btn footer-email" title="Email Us">
+                <i class="bi bi-envelope"></i>
+                <span>Email Us</span>
+            </button>
+            <button class="footer-btn footer-top" id="scrollToTop" title="Back to Top">
+                <i class="bi bi-arrow-up"></i>
+                <span>Back to Top</span>
+            </button>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
